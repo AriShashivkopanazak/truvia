@@ -1,0 +1,121 @@
+{
+        "response_code": 0,
+        "results": [
+                {
+                        "category": "Science: Computers",
+                        "type": "multiple",
+                        "difficulty": "easy",
+                        "question": "According to the International System of Units, how many bytes are in a kilobyte of RAM?",
+                        "correct_answer": "1000",
+                        "incorrect_answers": [
+                                "512",
+                                "1024",
+                                "500"
+                        ]
+                },
+                {
+                        "category": "Science: Computers",
+                        "type": "multiple",
+                        "difficulty": "easy",
+                        "question": "Which computer hardware device provides an interface for all other connected devices to communicate?",
+                        "correct_answer": "Motherboard",
+                        "incorrect_answers": [
+                                "Central Processing Unit",
+                                "Hard Disk Drive",
+                                "Random Access Memory"
+                        ]
+                },
+                {
+                        "category": "Science: Computers",
+                        "type": "multiple",
+                        "difficulty": "easy",
+                        "question": "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn&#039;t get modified?",
+                        "correct_answer": "Final",
+                        "incorrect_answers": [
+                                "Static",
+                                "Private",
+                                "Public"
+                        ]
+                },
+                {
+                        "category": "Science: Computers",
+                        "type": "boolean",
+                        "difficulty": "easy",
+                        "question": "Pointers were not used in the original C programming language; they were added later on in C++.",
+                        "correct_answer": "False",
+                        "incorrect_answers": [
+                                "True"
+                        ]
+                },
+                {
+                        "category": "Science: Computers",
+                        "type": "multiple",
+                        "difficulty": "easy",
+                        "question": "The series of the Intel HD graphics generation succeeding that of the 5000 and 6000 series (Broadwell) is called:",
+                        "correct_answer": "HD Graphics 500",
+                        "incorrect_answers": [
+                                "HD Graphics 700 ",
+                                "HD Graphics 600",
+                                "HD Graphics 7000"
+                        ]
+                },
+                {
+                        "category": "Science: Computers",
+                        "type": "multiple",
+                        "difficulty": "easy",
+                        "question": "What is the domain name for the country Tuvalu?",
+                        "correct_answer": ".tv",
+                        "incorrect_answers": [
+                                ".tu",
+                                ".tt",
+                                ".tl"
+                        ]
+                },
+                {
+                        "category": "Science: Computers",
+                        "type": "multiple",
+                        "difficulty": "easy",
+                        "question": "How many kilobytes in one gigabyte (in decimal)?",
+                        "correct_answer": "1000000",
+                        "incorrect_answers": [
+                                "1024",
+                                "1000",
+                                "1048576"
+                        ]
+                },
+                {
+                        "category": "Science: Computers",
+                        "type": "boolean",
+                        "difficulty": "easy",
+                        "question": "Linux was first created as an alternative to Windows XP.",
+                        "correct_answer": "False",
+                        "incorrect_answers": [
+                                "True"
+                        ]
+                },
+                {
+                        "category": "Science: Computers",
+                        "type": "multiple",
+                        "difficulty": "easy",
+                        "question": "This mobile OS held the largest market share in 2012.",
+                        "correct_answer": "iOS",
+                        "incorrect_answers": [
+                                "Android",
+                                "BlackBerry",
+                                "Symbian"
+                        ]
+                },
+                {
+                        "category": "Science: Computers",
+                        "type": "multiple",
+                        "difficulty": "easy",
+                        "question": "What does the computer software acronym JVM stand for?",
+                        "correct_answer": "Java Virtual Machine",
+                        "incorrect_answers": [
+                                "Java Vendor Machine",
+                                "Java Visual Machine",
+                                "Just Virtual Machine"
+                        ]
+                }
+        ]
+}

@@ -1,0 +1,17 @@
+{
+        "response_code": 0,
+        "results": [
+                {
+                        "category": "Entertainment: Music",
+                        "type": "multiple",
+                        "difficulty": "medium",
+                        "question": "Which French duo had UK hits in 1998 with the songs &#039;Sexy Boy&#039;, &#039;Kelly Watch The Stars&#039; &amp; &#039;All I Need&#039;?",
+                        "correct_answer": "Air",
+                        "incorrect_answers": [
+                                "Fire",
+                                "Earth",
+                                "Water"
+                        ]
+                }
+        ]
+}
