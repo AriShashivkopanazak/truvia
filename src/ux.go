@@ -1,4 +1,4 @@
-package ux
+package main
 
 // UX for Truvia
 
