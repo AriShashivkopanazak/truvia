@@ -1,5 +1,5 @@
 # test makefile
 
-
-clean:
-	touch test.txt
+truvia:
+	go build src/*.go
+	mv tasks build/truvia
