@@ -4,6 +4,9 @@ package main
 
 import (
 	"flag"
+	"fmt"
+	"os"
+	"strconv"
 )
 
 // Parses args
@@ -21,12 +24,12 @@ func argParse() {
 
 	// difficulty flag
 	var difficulty string
-	var randomDifficulty string // make random difficulty generator
+	var randomDifficulty string = "easy" // make random difficulty generator
 	flag.StringVar(&difficulty, "d", randomDifficulty, "Difficulty of Questions, defaults to random")
 
 	// type of question flag
 	var typeQuestion string
-	var randomType string // make random string generator
+	var randomType string = "tf" // make random string generator
 	flag.StringVar(&typeQuestion, "t", randomType, "Type of question, (true/false, multiple choice, ai matched answer, or random), defaults to random")
 
 	// chances
@@ -35,11 +38,11 @@ func argParse() {
 
 	// number of questions
 	var questionQuanity string
-	flag.StringVar(&questionQuanity, "n", "1", "number of questions, defaults to 1 question request")
+	flag.StringVar(&questionQuanity, "q", "1", "number of questions, defaults to 1 question request")
 
 	// cache
 	var cached string
-	flag.StringVar(&cached, "m", "false", "download your json file and save it, test case")
+	flag.StringVar(&cached, "s", "false", "download your json file and save it, test case")
 
 	// load saved cache
 	var popCached string
@@ -58,18 +61,61 @@ func argParse() {
 		// give medium request
 	} else if difficulty == "hard" {
 		// give hard request
+	} else {
+		fmt.Println("unknown difficulty")
+		os.Exit(1)
 	}
 
 	// process types of questions
-	// process chances
-	// process number of questions
-	// process cache
-	if cached == "false" {
-		// do not save json as file
+	if typeQuestion == "tf" {
+		// request true/false
+	} else if typeQuestion == "mc" {
+		// request multiple choice
+	} else if typeQuestion == "ai" {
+		// request multiple choice
+		// request ai to work on this
+		//ai()
+	} else if typeQuestion == "random" {
+		// do random value
 	} else {
-		// have user type in valid path to save and save as 0.json, and move other saves to one below, previous 0.json becomes 1.json
+		fmt.Println("unknown type of question")
+		os.Exit(1)
+	}
+
+	// process chances
+	numChances, errChances := strconv.Atoi(chances)
+	if errChances != nil {
+		fmt.Println("chances must use a integer value")
+		os.Exit(1)
+	}
+
+	// converted string number into integer
+	fmt.Printf("using %v chances\n", numChances)
+
+	// process number of questions
+	numQuestion, errQuestion := strconv.Atoi(questionQuanity)
+	if errQuestion != nil {
+		fmt.Println("question must use a integer value")
+		os.Exit(1)
+
+	}
+
+	// converted string number into integer
+	fmt.Printf("using %v questions\n", numQuestion)
+
+	// process cache
+	willCache, errCache := strconv.ParseBool(cached)
+	if errCache != nil {
+		fmt.Println("save arg must use boolean value")
+		os.Exit(1)
+	}
+
+	if willCache == true {
+		// save file
+		fmt.Println("saving query...")
 	}
 
 	// process saved cache
+
 	// process deleted cache
 }
