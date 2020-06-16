@@ -23,7 +23,7 @@ func argParse() {
 		"hard",
 	}
 	randomDifficulty := rand.Int() % len(randomDifficultyIndex)
-	flag.StringVar(&rawDifficulty, "d", randomDifficultyIndex[randomDifficulty], "Difficulty of Question")
+	flag.StringVar(&rawDifficulty, "d", randomDifficultyIndex[randomDifficulty], "Difficulty of Question: easy, medium, or hard")
 
 	// type of question flag
 	var rawQuestion string
@@ -37,16 +37,16 @@ func argParse() {
 	flag.StringVar(&rawQuestion, "t", randomTypeIndex[randomType], "Type of question, (ai, tf, mc)")
 
 	// chances
-	var numGuess string
-	flag.StringVar(&numGuess, "c", "3", "number of guesses")
+	var numGuess int
+	flag.IntVar(&numGuess, "c", 3, "number of guesses")
 
 	// number of questions
-	var numQuestion string
-	flag.StringVar(&numQuestion, "q", "1", "number of questions")
+	var numQuestion int
+	flag.IntVar(&numQuestion, "q", 1, "number of questions")
 
 	// save
-	var saved string
-	flag.StringVar(&saved, "s", "false", "save your request")
+	var saved bool
+	flag.BoolVar(&saved, "s", false, "save your request")
 
 	// load saved save
 	var popSaved string
@@ -89,34 +89,18 @@ func argParse() {
 		os.Exit(1)
 	}
 
-	// process chances
-	guessQuanity, errGuess := strconv.Atoi(numGuess)
-	if errGuess != nil {
-		fmt.Println("chances must use a integer value")
-		os.Exit(1)
-	}
 
+	guessQuanity := numGuess
 	// converted string number into integer
 	fmt.Printf("using %v chances\n", guessQuanity)
 
-	// process number of questions
-	questionQuanity, errQuestion := strconv.Atoi(numQuestion)
-	if errQuestion != nil {
-		fmt.Println("question must use a integer value")
-		os.Exit(1)
 
-	}
-
+	questionQuanity := numQuestion
 	// converted string number into integer
 	fmt.Printf("using %v questions\n", questionQuanity)
 
-	// process save
-	willSave, errSave := strconv.ParseBool(saved)
-	if errSave != nil {
-		fmt.Println("save arg must use boolean value")
-		os.Exit(1)
-	}
 
+	willSave := saved
 	if willSave == true {
 		// save file
 		fmt.Println("saving query...")
