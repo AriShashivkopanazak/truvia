@@ -1,0 +1,123 @@
+{
+        "response_code": 0,
+        "results": [
+                {
+                        "category": "Entertainment: Film",
+                        "type": "multiple",
+                        "difficulty": "medium",
+                        "question": "In which 1973 film does Yul Brynner play a robotic cowboy who malfunctions and goes on a killing\tspree?",
+                        "correct_answer": "Westworld",
+                        "incorrect_answers": [
+                                "Runaway",
+                                "Android",
+                                "The Terminators"
+                        ]
+                },
+                {
+                        "category": "History",
+                        "type": "multiple",
+                        "difficulty": "hard",
+                        "question": "In the year 1900, what were the most popular first names given to boy and girl babies born in the United States?",
+                        "correct_answer": "John and Mary",
+                        "incorrect_answers": [
+                                "Joseph and Catherine",
+                                "William and Elizabeth",
+                                "George and Anne"
+                        ]
+                },
+                {
+                        "category": "Entertainment: Video Games",
+                        "type": "multiple",
+                        "difficulty": "easy",
+                        "question": "In the game Half-Life, which enemy is showcased as the final boss?",
+                        "correct_answer": "The Nihilanth",
+                        "incorrect_answers": [
+                                "Dr. Wallace Breen",
+                                "G-Man",
+                                "The Gonarch"
+                        ]
+                },
+                {
+                        "category": "Entertainment: Music",
+                        "type": "multiple",
+                        "difficulty": "medium",
+                        "question": "Johnny Cash did a cover of this song written by lead singer of Nine Inch Nails, Trent Reznor.",
+                        "correct_answer": "Hurt",
+                        "incorrect_answers": [
+                                "Closer",
+                                "A Warm Place",
+                                "Big Man with a Gun"
+                        ]
+                },
+                {
+                        "category": "Entertainment: Video Games",
+                        "type": "multiple",
+                        "difficulty": "easy",
+                        "question": "How many differently shaped Tetris pieces are there?",
+                        "correct_answer": "7",
+                        "incorrect_answers": [
+                                "5",
+                                "6",
+                                "8"
+                        ]
+                },
+                {
+                        "category": "Entertainment: Video Games",
+                        "type": "boolean",
+                        "difficulty": "easy",
+                        "question": "In Pok&eacute;mon Sun and Moon, a male Salandit can evolve to a Salazzle.",
+                        "correct_answer": "False",
+                        "incorrect_answers": [
+                                "True"
+                        ]
+                },
+                {
+                        "category": "Science: Mathematics",
+                        "type": "multiple",
+                        "difficulty": "easy",
+                        "question": "How many sides does a heptagon have?",
+                        "correct_answer": "7",
+                        "incorrect_answers": [
+                                "8",
+                                "6",
+                                "5"
+                        ]
+                },
+                {
+                        "category": "Entertainment: Video Games",
+                        "type": "multiple",
+                        "difficulty": "medium",
+                        "question": "In the game Pok&eacute;mon Conquest, which warlord is able to bond with Zekrom and a shiny Rayquazza?",
+                        "correct_answer": "Nobunaga",
+                        "incorrect_answers": [
+                                "The Player",
+                                "Oichi",
+                                "Hideyoshi"
+                        ]
+                },
+                {
+                        "category": "Entertainment: Video Games",
+                        "type": "multiple",
+                        "difficulty": "easy",
+                        "question": "What is the boss round featured in the &quot;Call Of Duty: Zombies&quot; map &quot;Five&quot;?",
+                        "correct_answer": "The Pentagon Thief",
+                        "incorrect_answers": [
+                                "Hellhounds",
+                                "Jumping Jacks",
+                                "Napalm Zombie"
+                        ]
+                },
+                {
+                        "category": "Entertainment: Video Games",
+                        "type": "multiple",
+                        "difficulty": "hard",
+                        "question": "In the game Warframe, what Mastery Rank do you need to have to build the Tigris Prime?",
+                        "correct_answer": "13",
+                        "incorrect_answers": [
+                                "6",
+                                "18",
+                                "10"
+                        ]
+                }
+        ]
+}

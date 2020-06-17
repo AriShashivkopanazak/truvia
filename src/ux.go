@@ -59,12 +59,16 @@ func argParse() {
 	flag.Parse()
 
 	// process difficulty
+	var difficultyRequest string
 	if rawDifficulty == "easy" {
 		// give easy request
+		difficultyRequest = "&difficulty=" + rawDifficulty
 	} else if rawDifficulty == "medium" {
 		// give medium request
+		difficultyRequest = "&difficulty=" + rawDifficulty
 	} else if rawDifficulty == "hard" {
 		// give hard request
+		difficultyRequest = "&difficulty=" + rawDifficulty
 	} else if rawDifficulty == "random" {
 		rawDifficulty = randomDifficultyIndex[randomDifficulty]
 	} else {
@@ -73,12 +77,14 @@ func argParse() {
 	}
 
 	// process types of questions
+	var typeRequest string
 	if rawQuestion == "tf" {
-		// request true/false
+		typeRequest = "&type=boolean"
 	} else if rawQuestion == "mc" {
-		// request multiple choice
+		typeRequest = "&type=multiple"
 	} else if rawQuestion == "ai" {
 		// request multiple choice
+		typeRequest = "&type=multiple"
 		// request ai to work on this
 		//ai()
 	} else if rawQuestion == "random" {
@@ -89,16 +95,14 @@ func argParse() {
 		os.Exit(1)
 	}
 
-
 	guessQuanity := numGuess
 	// converted string number into integer
 	fmt.Printf("using %v chances\n", guessQuanity)
 
-
 	questionQuanity := numQuestion
 	// converted string number into integer
+	var questionRequest string = "amount=" + strconv.Itoa(questionQuanity)
 	fmt.Printf("using %v questions\n", questionQuanity)
-
 
 	willSave := saved
 	if willSave == true {
