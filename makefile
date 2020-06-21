@@ -1,5 +1,6 @@
 # test makefile
+# borked as of now
+
 
 truvia:
-	go build src/*.go
-	mv tasks build/truvia
+	mv tasks $GOPATH/bin/truvia
