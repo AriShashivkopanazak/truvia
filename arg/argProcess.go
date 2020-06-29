@@ -21,7 +21,7 @@ func argProcess(rawDifficulty string, rawTypeof string, guesses uint, questions 
 	case "medium":
 		difficulty = "&rawDifficulty=medium"
 	case "hard":
-		difficulty = "rawDifficulty=hard"
+		difficulty = "&rawDifficulty=hard"
 	case "random":
 		rand.Seed(time.Now().Unix())
 		randomrawDifficultyIndex := []string{
@@ -78,7 +78,6 @@ func argProcess(rawDifficulty string, rawTypeof string, guesses uint, questions 
 		}
 		delSaved = uint(intDelSaved)
 	}
-
 	if willSave == true || popSaved > 0 || delSaved > 0 {
 		save.Save(willSave, popSaved, delSaved)
 	} else {
