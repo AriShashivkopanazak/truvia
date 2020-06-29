@@ -2,15 +2,20 @@ package arg
 
 import (
 	"flag"
+	"fmt"
 	"math/rand"
+	"os"
 	"time"
+
+	"github.com/AriShashivkopanazak/truvia/api"
+	"github.com/AriShashivkopanazak/truvia/save"
 )
 
-// Parse takes in arguments
+// Parse takes in the args and outputs them into api or save
 func Parse() {
 
 	// difficulty
-	var difficulty string
+	var rawDifficulty string
 	rand.Seed(time.Now().Unix())
 	randomDifficultyIndex := []string{
 		"easy",
@@ -19,19 +24,19 @@ func Parse() {
 	}
 	randomDifficulty := rand.Int() % len(randomDifficultyIndex)
 	randomDiff := randomDifficultyIndex[randomDifficulty]
-	flag.StringVar(&difficulty, "d", randomDiff, "Difficulty of Question: easy, medium, or hard")
+	flag.StringVar(&rawDifficulty, "d", randomDiff, "Difficulty of Question: easy, medium, or hard")
 
 	// type of question
-	var typeOf string
+	var rawTypeOf string
 	rand.Seed(time.Now().Unix())
 	randomTypeIndex := []string{
+		"&type=boolean",
+		"&type=multiple",
 		"ai",
-		"tf",
-		"mc",
 	}
 	typeRandom := rand.Int() % len(randomTypeIndex)
 	randomType := randomTypeIndex[typeRandom]
-	flag.StringVar(&typeOf, "t", randomType, "Type of question, (ai, tf, mc)")
+	flag.StringVar(&rawTypeOf, "t", randomType, "Type of question, (ai, tf, mc)")
 
 	// guesses
 	var guesses uint
@@ -46,15 +51,52 @@ func Parse() {
 	flag.BoolVar(&willSave, "s", false, "save your request")
 
 	// load saved save
-	var popSaved string
-	flag.StringVar(&popSaved, "p", "null", "pop existing saves from library")
+	var popSaved uint
+	flag.UintVar(&popSaved, "p", 0, "pop existing saves from library")
 
 	// delete saved save
-	var delSaved string
-	flag.StringVar(&delSaved, "D", "null", "delete saved request, BE CAREFUL!")
+	var delSaved uint
+	flag.UintVar(&delSaved, "D", 0, "delete saved request, BE CAREFUL!")
 
 	flag.Parse()
 
-	// parse args and put them in argProcess for processing
-	argProcess(difficulty, typeOf, guesses, questions, willSave, popSaved, delSaved)
+	// difficulty processing
+	var difficulty string
+	switch rawDifficulty {
+	case "easy":
+		difficulty = "&rawDifficulty=easy"
+	case "medium":
+		difficulty = "&rawDifficulty=medium"
+	case "hard":
+		difficulty = "&rawDifficulty=hard"
+	case "random":
+		random := "&rawDifficulty=" + randomDiff
+		difficulty = random
+		fmt.Println(randomDiff + " difficulty selected")
+	default:
+		fmt.Println("Error: unknown rawDifficulty")
+		os.Exit(0)
+	}
+
+	// type of question processing
+	var typeOf string
+	switch rawTypeOf {
+	case "tf":
+		typeOf = "&type=boolean"
+	case "mc":
+		typeOf = "&type=multiple"
+	case "ai":
+		typeOf = "&type=multiple"
+	case "random":
+		typeOf = rawTypeOf
+	default:
+		fmt.Println("Error: unknown type of question")
+		os.Exit(1)
+	}
+
+	if popSaved > 0 || delSaved > 0 {
+		save.Save(willSave, popSaved, delSaved)
+	} else {
+		api.Process(difficulty, typeOf, guesses, questions)
+	}
 }
