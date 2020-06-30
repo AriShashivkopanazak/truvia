@@ -81,6 +81,6 @@ func argProcess(rawDifficulty string, rawTypeof string, guesses uint, questions 
 	if willSave == true || popSaved > 0 || delSaved > 0 {
 		save.Save(willSave, popSaved, delSaved)
 	} else {
-		api.API(difficulty, typeOf, questions, guesses)
+		api.Process(difficulty, typeOf, questions, guesses)
 	}
 }

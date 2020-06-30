@@ -1,32 +1,29 @@
 package api
 
 import (
-    "fmt"
-    "os"
 	"html"
 )
 
 type Question struct {
-    Category string            `json:"category"`
-		QuestionType string	`json:"type"`
-		QuestionDifficulty string `json:"difficulty"`
-		Question string `json:"question"`
-		CorrectAnswer string `json:"correct_answer"`
-		IncorrectAnswers []string `json:"incorrect_answers"`
+	Category           string   `json:"category"`
+	QuestionType       string   `json:"type"`
+	QuestionDifficulty string   `json:"difficulty"`
+	Question           string   `json:"question"`
+	CorrectAnswer      string   `json:"correct_answer"`
+	IncorrectAnswers   []string `json:"incorrect_answers"`
 }
 
-
-func apiProcess(jsonResponse Response, typeOf string, guesses uint, questions uint) {
-	const len uint = questions
+func apiProcess(jsonResponse Response) []Question {
+	//const len uint = questions
 	var questionsArray []Question
+	//var q Question
 
-	for i := 0; i < len(responseObject.Questions); i++ {
-		q = responseObject.Questions[i].Question
-		q = html.UnescapeString(q) //convert html special characters to text
-		if err != nil {
-			fmt.Print(err.Error)
-			os.Exit(1)
-		}
+	for i := 0; i < len(jsonResponse.Questions); i++ {
+		questionString := jsonResponse.Questions[i].Question
+		questionString = html.UnescapeString(questionString) //convert html special characters to text
+
+		q := jsonResponse.Questions[i]
+		q.Question = questionString
 
 		questionsArray = append(questionsArray, q)
 	}
